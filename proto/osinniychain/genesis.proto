@@ -1,0 +1,12 @@
+syntax = "proto3";
+package osinniyapps.osinniychain.osinniychain;
+
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "github.com/osinniyapps/osinniychain/x/osinniychain/types";
+
+// GenesisState defines the osinniychain module's genesis state.
+message GenesisState {
+    // this line is used by starport scaffolding # genesis/proto/state
+    // this line is used by starport scaffolding # ibc/genesis/proto
+}
