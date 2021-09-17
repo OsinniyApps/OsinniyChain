@@ -7,7 +7,16 @@ option go_package = "github.com/osinniyapps/osinniychain/x/osinniychain/types";
 
 // Msg defines the Msg service.
 service Msg {
-    // this line is used by starport scaffolding # proto/tx/rpc
+  // this line is used by starport scaffolding # proto/tx/rpc
+  rpc Send(MsgSend) returns (MsgSendResponse);
 }
 
 // this line is used by starport scaffolding # proto/tx/message
+message MsgSend {
+  string creator = 1;
+  string msg = 2;
+}
+
+message MsgSendResponse {
+  uint64 id = 1;
+}

@@ -19,6 +19,11 @@ const (
 	// this line is used by starport scaffolding # ibc/keys/name
 )
 
+const (
+	MsgKey = "Msg-value-"
+	MsgCountKey = "Msg-count-"
+)
+
 // this line is used by starport scaffolding # ibc/keys/port
 
 func KeyPrefix(p string) []byte {

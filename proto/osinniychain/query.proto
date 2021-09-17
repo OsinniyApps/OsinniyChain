@@ -3,6 +3,7 @@ package osinniyapps.osinniychain.osinniychain;
 
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
+import "osinniychain/msg.proto";
 // this line is used by starport scaffolding # 1
 
 option go_package = "github.com/osinniyapps/osinniychain/x/osinniychain/types";
@@ -10,6 +11,23 @@ option go_package = "github.com/osinniyapps/osinniychain/x/osinniychain/types";
 // Query defines the gRPC querier service.
 service Query {
     // this line is used by starport scaffolding # 2
+
+	// Queries a list of messages items.
+	rpc Messages(QueryMessagesRequest) returns (QueryMessagesResponse) {
+		option (google.api.http).get = "/osinniyapps/osinniychain/osinniychain/messages";
+	}
 }
 
 // this line is used by starport scaffolding # 3
+message QueryMessagesRequest {
+	// Adding pagination to request
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryMessagesResponse {
+//   string msg = 1;
+  // Returning a list of posts
+  repeated Message Msg = 1;
+  // Adding pagination to response
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}

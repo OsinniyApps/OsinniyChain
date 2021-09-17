@@ -1,0 +1,10 @@
+syntax = "proto3";
+package osinniyapps.osinniychain.osinniychain;
+
+option go_package = "github.com/osinniyapps/osinniychain/x/osinniychain/types";
+
+message Message {
+    string creator = 1;
+    uint64 id = 2;
+    string msg = 3;
+}
